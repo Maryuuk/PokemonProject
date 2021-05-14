@@ -89,7 +89,7 @@ public abstract class Pokemon {
     public abstract void atacar(Pokemon enemigo);
     
     public void danioInflingido(int ataque) {
-    	
+    	// Hace que la vida sea igual a la vida menos el daño recibido, o 0 si el resultado de la resta da 0
     	this.ps = this.ps - ataque > 0 ? this.ps - ataque : 0;
     }
     

@@ -15,6 +15,7 @@ public class Pokemons {
 	
 	public void insertarPokemon(Pokemon pokemon) {
 		
+		// Crea un pokemon nuevo en la base de datos
 		String nombre = pokemon.getNombre();
 		double altura = pokemon.getAltura();
 		double peso = pokemon.getPeso();
@@ -30,18 +31,21 @@ public class Pokemons {
 	
 	public void modificarPokemon(String nombrePokemon, int ps, int ataque, int defensa, int velocidad) {
 		
+		// Modifica los datos de un pokemon de la base de datos
 		Conexion.ejecutarUpdate("UPDATE pokemons SET ps='"+ps+"', ataque='"+ataque+"', defensa='"+defensa+"', velocidad='"+velocidad+"' WHERE nombre='"+nombrePokemon+"';");
 		
 	}
 	
 	public void eliminarPokemon(String nombrePokemon) {
 		
+		// Borra un pokemon de la base de datos
 		Conexion.ejecutarUpdate("DELETE FROM pokemons WHERE nombre='"+nombrePokemon+"';");
 		
 	}
 
 	public Pokemon recogerPokemon(String nombrePokemon) {
 		
+		// Selecciona un pokemon de la base de datos y lo devuelve según el tipo
         ResultSet resultado = Conexion.ejecutarSentencia("SELECT * FROM pokemons WHERE nombre='"+nombrePokemon+"';");
         
         try {
@@ -82,6 +86,7 @@ public class Pokemons {
 
     public ArrayList<Pokemon> recogerTodosPokemons() {
     	
+    	// Crea un arraylist donde añade a cada uno de los pokemons de la base de datos, y lo devuelve
         ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
         ResultSet resultado = Conexion.ejecutarSentencia("SELECT * FROM pokemons;");
         

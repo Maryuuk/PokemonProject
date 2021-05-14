@@ -7,7 +7,7 @@ public class Agua extends Pokemon {
     }
 
     public void atacar(Pokemon enemigo) {
-    	
+    	// Dependiendo del número que se genere, imprime un ataque u otro
         int habilidad = (int) Math.floor(Math.random() * 4 + 1);
         if(habilidad == 1) {
             System.out.println(this.nombre+" usa Aqua Cola contra "+enemigo.getNombre());
@@ -19,6 +19,7 @@ public class Agua extends Pokemon {
             System.out.println(this.nombre+" usa Pistola de Agua contra "+enemigo.getNombre());
         }
         
+        // Según el tipo del enemigo, el daño se reduce a la mitad o a un tercio
         int ataquePonderado = 0;
     	if(enemigo.getTipo().equals("Planta")) {
     		ataquePonderado = this.ataque / 3;
@@ -29,13 +30,13 @@ public class Agua extends Pokemon {
     	} else if(enemigo.getTipo().equals("Electrico")) {
     		ataquePonderado = this.ataque / 3;
     	}
-    	
+    	// Pasa el daño al método de esta clase
         enemigo.danioInflingido(ataquePonderado);
         
     }
     
     public void danioInflingido(int ataque) {
-    	
+    	// Pasa el daño al método del padre
     	super.danioInflingido(ataque);
     	
     }

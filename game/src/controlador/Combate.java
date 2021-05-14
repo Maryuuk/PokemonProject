@@ -24,6 +24,7 @@ public class Combate {
 
     public Pokemon comprobarGanador() {
     	
+    	// Compara la vida de ambos pokemons y devuelve el pokemon con mayor vida
     	int pokemon1Ps = pokemon1.getPs();
     	int pokemon2Ps = pokemon2.getPs();
     	if(pokemon1Ps > pokemon2Ps && pokemon1Ps > 0) {
@@ -38,6 +39,9 @@ public class Combate {
     
     public boolean rondaSiguiente() {
     	
+    	// Los pokemons tienen un 50% de atacar antes que el otro
+    	// Si un pokemon debilita al otro, este último no realizará ataque
+    	// Habrá siguiente ronda mientras la vida de ambos pokemons sea mayor que 0
     	boolean haySiguiente = false;
     	this.rondas -= 1;
     	

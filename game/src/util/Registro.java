@@ -15,6 +15,9 @@ public class Registro {
 	public void resultadoCombate(Pokemon pokemon1, Pokemon pokemon2, Pokemon ganador) {
 		
 		try {
+			// Crea un nuevo archivo en el directorio especificado
+			// Crea un arraylist donde guarda los resultados de los combates que ya estén escritos
+			// Escribe los anteriores combates, si los hay, y el que acaba de finalizar
             File resultados = new File("src/exports/combates.md");
             resultados.createNewFile();
             FileWriter escritor;
@@ -51,6 +54,7 @@ public class Registro {
 	
 	public void leerResultado() {
 		
+		// Lee por consola el archivo del directorio especificado
 		String linea = "";
         File resultados = new File("src/exports/combates.md");
         try{
